@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  
+  database_postgres:
+    image: postgres
+    container_name: database_postgres_control_users
+    restart: always
+    ports:
+      - 5432:5432
+    
+    environment:
+      - POSTGRES_USER=adller
+      - POSTGRES_PASSWORD=adller
+      - POSTGRES_DB=database_control_users
+    volumes: 
+      - pgdata:/data/postgres
+    network_mode: host
+
+  app: 
+    # vai buidar a imagem do dockerfile da raiz  do nosso projeto
+    build: .
+    # porta 3333 do nosso sistema conectada a porta 3333 do nosso container
+    container_name: control_users
+    ports: 
+      - 3333:3333
+    # nosso volume da raiz do projeto para o app container em usr/app 
+    volumes:
+      - .:/usr/app
+    network_mode: host
+  
+volumes: 
+  pgdata: 
+    driver: local
