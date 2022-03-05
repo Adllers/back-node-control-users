@@ -20,8 +20,8 @@
 ### Requisitos Funcionais - Usuários
 - [x] Usuário pode criar a sua conta pessoal
 - [x] Usuário pode acessar (logar) na sua conta criada
-- [ ] Usuário pode visualizar seus dados
-- [ ] Usuário pode alterar seus dados
+- [x] Usuário pode visualizar seus dados
+- [x] Usuário pode alterar seus dados
 - [ ] Usuário pode remover a sua conta
 
 ### Regras de Negócio - Usuários
