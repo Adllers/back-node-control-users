@@ -1,13 +1,14 @@
 ## Rodando o Projeto
 - npm run dev
 
-### Requisitos Não Funcionais
+### Requisitos Não Funcionais Do Projeto
 - [x] Utilização do Express como servidor da API
 - [x] Utilização de Typescript
 - [] Utilização de JWT (Json Web Token) para autenticação
 - [] Utilização de Testes Automatizados
 - [] Utilização do Swagger para documentação
 - [] Utilização de um banco de dados relacional para modelagem de usuários e endereços
+- [] Utilização do Typeorm
 
 ### Requisitos Funcionais - Usuários
 - [] Usuário pode criar a sua conta pessoal
