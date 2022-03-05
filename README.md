@@ -1,5 +1,12 @@
+# Sobre a Aplicação
+- Essa é uma API NodeJS desenvolvida em Typescript para cadastro e controle de usuários.  
+
+## Infra
+- Temos um container rodando a API NodeJS
+- Temos um container rodando o Banco de Dados Postgresql
+
 ## Rodando o Projeto
-- npm run dev
+- na raiz do projeto, digite: **docker-compose up**
 
 ### Requisitos Não Funcionais Do Projeto
 - [x] Utilização do Express como servidor da API
@@ -7,11 +14,11 @@
 - [ ] Utilização de JWT (Json Web Token) para autenticação
 - [ ] Utilização de Testes Automatizados
 - [ ] Utilização do Swagger para documentação
-- [ ] Utilização de um banco de dados relacional para modelagem de usuários e endereços
-- [ ] Utilização do Typeorm
+- [x] Utilização de um banco de dados relacional para modelagem de usuários e endereços
+- [x] Utilização do Typeorm
 
 ### Requisitos Funcionais - Usuários
-- [ ] Usuário pode criar a sua conta pessoal
+- [x] Usuário pode criar a sua conta pessoal
 - [ ] Usuário pode acessar (logar) na sua conta criada
 - [ ] Usuário pode visualizar seus dados
 - [ ] Usuário pode alterar seus dados
