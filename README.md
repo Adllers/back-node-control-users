@@ -22,8 +22,8 @@
 - [x] Usuário pode acessar (logar) na sua conta criada
 - [x] Usuário pode visualizar seus dados
 - [x] Usuário pode alterar seus dados
-- [ ] Usuário pode remover a sua conta
+- [x] Usuário pode remover a sua conta
 
 ### Regras de Negócio - Usuários
-- [ ] Usuário só pode visualizar, alterar ou remover sua conta se estiver autenticado
+- [x] Usuário só pode visualizar, alterar ou remover sua conta se estiver autenticado
 - [x] Para que o usuário atualize seu dados de perfil, é preciso que ele forneça a senha antiga
