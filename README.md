@@ -26,4 +26,4 @@
 
 ### Regras de Negócio - Usuários
 - [ ] Usuário só pode visualizar, alterar ou remover sua conta se estiver autenticado
-
+- [x] Para que o usuário atualize seu dados de perfil, é preciso que ele forneça a senha antiga
