@@ -9,12 +9,16 @@
 - na raiz do projeto, digite: **docker-compose up**
 - na raiz do projeto, digite: **yarn typeorm migration:run**
 
+## Documentação do Projeto
+- Utilizamos o Swagger 
+- Quando o projeto estiver rodando, acesse no browser: **http://localhost:3333/api-docs** 
+
 ### Requisitos Não Funcionais Do Projeto
 - [x] Utilização do Express como servidor da API
 - [x] Utilização de Typescript
 - [x] Utilização de JWT (Json Web Token) para autenticação
 - [x] Utilização de Testes Automatizados (Jest)
-- [ ] Utilização do Swagger para documentação
+- [x] Utilização do Swagger para documentação
 - [x] Utilização de um banco de dados relacional para modelagem de usuários e endereços
 - [x] Utilização do Typeorm
 
@@ -32,3 +36,4 @@
 
 ### Testes Automatizados
 - Na raiz do projeto, digite: **npm test**
+

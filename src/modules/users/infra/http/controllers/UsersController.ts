@@ -21,7 +21,7 @@ export default class UsersController {
         
         //user.password = '';    
 
-        return response.json({
+        return response.status(201).json({
             name: user?.name, 
             email: user?.email,
             id: user?.id,
