@@ -186,8 +186,8 @@
             "tags": [
                 "User Profile"
             ],
-            "summary": "Update Profile User",
-            "description": "Update data from User",
+            "summary": "Get user profile",
+            "description": "Get data from user profile",
             "security": [
                 { "bearerAuth": []}
             ],

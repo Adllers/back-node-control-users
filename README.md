@@ -1,5 +1,5 @@
 # Sobre a Aplicação
-- Essa é uma API NodeJS desenvolvida em Typescript para cadastro e controle de usuários.  
+- Essa é uma API NodeJS desenvolvida em Typescript para cadastro e controle de usuários e endereços.  
 
 ## Infra
 - Temos um container rodando a aplicação (API NodeJS)
@@ -37,7 +37,7 @@
 
 ### Requisitos Funcionais - Endereços
 - [x] Usuário pode Criar novo endereço
-- [] Usuário pode visualizar seus endereços criados (Deve ser utilizado queryParams e ParamsRoute)
+- [x] Usuário pode visualizar seus endereços criados (Deve ser utilizado queryParams e ParamsRoute)
 - [] Usuário pode alterar dados de endereço
 - [] Usuário pode remover endereço 
 

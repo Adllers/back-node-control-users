@@ -2,9 +2,10 @@ import { getRepository, Repository, Raw } from 'typeorm';
 import IAddressesRepository from '../../../repositories/IAddressesRepository';
 import Address from '../entities/Address';
 import ICreateAddressDTO from '../../../dtos/ICreateAddressDTO';
+import IFindAddressesDTO from '../../../dtos/IFindAddressesDTO';
 
 
-class AppointmentsRepository implements IAddressesRepository {
+class AddressesRepository implements IAddressesRepository {
 
     private ormRepository:Repository<Address>;
 
@@ -22,6 +23,18 @@ class AppointmentsRepository implements IAddressesRepository {
 
         return address;
     }
+
+    public async findByCountry({ user_id, country}: IFindAddressesDTO): Promise<Address[]> {
+
+        const addressesQuery = await this.ormRepository
+        .createQueryBuilder()
+        .where("user_id = :user_id", {user_id})
+        .andWhere("country = :country", { country })
+        .getMany();
+        
+
+        return addressesQuery;
+    }
 }
 
-export default AppointmentsRepository;
+export default AddressesRepository;

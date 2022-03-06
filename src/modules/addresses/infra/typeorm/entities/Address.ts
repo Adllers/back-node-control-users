@@ -3,7 +3,7 @@ import User from '../../../../../modules/users/infra/typeorm/entities/Users';
 
 
 @Entity('addresses')
-class Appointment {
+class Addresses {
 
     // Relacionamento de Endereços para Usuário
     // Many to One -> muitos endereços para 1 usuário
@@ -44,4 +44,4 @@ class Appointment {
 
 }
 
-export default Appointment;
+export default Addresses;
