@@ -4,6 +4,7 @@ import { container } from 'tsyringe';
 import CreateAddressService from '../../../services/CreateAddressService';
 import AddressesAvailabilitiesService from '../../../services/AddressesAvailabilitiesService';
 import UpdateAddressService from '../../../services/UpdateAddressService';
+import DeleteAddressService from '../../../services/DeleteAddressService';
 
 //index, show, create, update, delete
 export default class AdressesController {
@@ -65,6 +66,20 @@ export default class AdressesController {
           
         return response.json(address);
 
+   }
+   
+
+   public async delete(request: Request, response: Response): Promise<Response> {
+
+        const user_id = request.user.id
+
+        const {address_id} = request.params;
+    
+        const addressToRemove = container.resolve(DeleteAddressService);
+
+        const address = await addressToRemove.execute({ user_id, address_id });
+
+        return response.json(address);
    }
 
 };

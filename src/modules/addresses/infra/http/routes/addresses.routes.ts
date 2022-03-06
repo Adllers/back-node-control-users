@@ -18,4 +18,6 @@ addressesRouter.get('/:user_id/my-addresses', addressesController.index);
 
 addressesRouter.put('/update-address/:address_id', addressesController.update);
 
+addressesRouter.delete('/delete-address/:address_id', addressesController.delete);
+
 export default addressesRouter;

@@ -46,9 +46,15 @@ class AddressesRepository implements IAddressesRepository {
         .andWhere("country = :country", { country })
         .getMany();
         
-
         return addressesQuery;
     }
+
+    public async removeAddress(address: Address): Promise<Address> {
+
+        return this.ormRepository.remove(address);
+        
+    }
+
 }
 
 export default AddressesRepository;

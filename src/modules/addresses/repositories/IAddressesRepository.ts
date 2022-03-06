@@ -7,4 +7,5 @@ export default interface IAddressesRepository {
     create( data:ICreateAddressDTO): Promise<Address>;
     findByCountry( data: IFindAddressesDTO): Promise<Address[]>
     save(address: Address): Promise<Address>;
+    removeAddress(address: Address): Promise<Address>;
 }
