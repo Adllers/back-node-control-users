@@ -7,12 +7,13 @@
 
 ## Rodando o Projeto
 - na raiz do projeto, digite: **docker-compose up**
+- na raiz do projeto, digite: **yarn typeorm migration:run**
 
 ### Requisitos Não Funcionais Do Projeto
 - [x] Utilização do Express como servidor da API
 - [x] Utilização de Typescript
 - [x] Utilização de JWT (Json Web Token) para autenticação
-- [ ] Utilização de Testes Automatizados
+- [x] Utilização de Testes Automatizados (Jest)
 - [ ] Utilização do Swagger para documentação
 - [x] Utilização de um banco de dados relacional para modelagem de usuários e endereços
 - [x] Utilização do Typeorm
@@ -27,3 +28,7 @@
 ### Regras de Negócio - Usuários
 - [x] Usuário só pode visualizar, alterar ou remover sua conta se estiver autenticado
 - [x] Para que o usuário atualize seu dados de perfil, é preciso que ele forneça a senha antiga
+
+
+### Testes Automatizados
+- Na raiz do projeto, digite: **npm test**
