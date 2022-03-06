@@ -3,6 +3,7 @@ import { container } from 'tsyringe';
 
 import CreateAddressService from '../../../services/CreateAddressService';
 import AddressesAvailabilitiesService from '../../../services/AddressesAvailabilitiesService';
+import UpdateAddressService from '../../../services/UpdateAddressService';
 
 //index, show, create, update, delete
 export default class AdressesController {
@@ -40,5 +41,30 @@ export default class AdressesController {
 
        return response.json(addresses);
    } 
+
+   public async update(request: Request, response: Response): Promise<Response> {
+
+        const user_id = request.user.id;
+
+        const {address_id} = request.params;
+
+        const { country, state, city, district, street, address_number } = request.body;
+
+        const updateAddress = container.resolve(UpdateAddressService);
+
+        const address = await updateAddress.execute({
+            user_id, 
+            address_id,
+            country,
+            state,
+            city,
+            district,
+            street,
+            address_number,
+        });
+          
+        return response.json(address);
+
+   }
 
 };

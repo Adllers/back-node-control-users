@@ -15,6 +15,14 @@ class AddressesRepository implements IAddressesRepository {
 
     }
 
+    public async findById(id: string): Promise<Address | undefined> {
+
+        const address = await this.ormRepository.findOne(id);
+
+        return address;
+
+    } 
+
     public async create({ country, state, city, district, street, address_number, user_id }: ICreateAddressDTO): Promise<Address> {
         
         const address = this.ormRepository.create({ country, state, city, district, street, address_number, user_id });
@@ -22,6 +30,12 @@ class AddressesRepository implements IAddressesRepository {
         await this.ormRepository.save(address);
 
         return address;
+    }
+
+    public async save(address: Address): Promise<Address> {
+
+        return this.ormRepository.save(address);
+        
     }
 
     public async findByCountry({ user_id, country}: IFindAddressesDTO): Promise<Address[]> {
