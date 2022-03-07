@@ -7,9 +7,13 @@
 
 ## Rodando o Projeto
 - Faça um git clone do repositório
-- Verifique se a porta 5432 está disponível
-- na raiz do projeto, digite: **docker-compose up**
-- na raiz do projeto, digite: **yarn typeorm migration:run**
+- Entre na raiz do projeto, digite: **npm install**
+- Certifique-se que a porta 5432 esteja livre 
+- Na raiz do projeto, digite: **docker-compose up**
+- Abra um outro terminal, entre na raiz do projeto, e digite: **yarn typeorm migration:run**
+
+- Digite **docker ps** para ver os 2 containers rodando (control_users e database_postgres_control_users)
+- Entre na sua ferramenta de banco de dados para ver os relacionamentos entre as entidades
 
 ## Documentação do Projeto
 - Utilizamos o Swagger 
