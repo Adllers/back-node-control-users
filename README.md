@@ -6,12 +6,14 @@
 - Temos um container rodando o Banco de Dados Postgres
 
 ## Rodando o Projeto
+- Faça um git clone do repositório
+- Verifique se a porta 5432 está disponível
 - na raiz do projeto, digite: **docker-compose up**
 - na raiz do projeto, digite: **yarn typeorm migration:run**
 
 ## Documentação do Projeto
 - Utilizamos o Swagger 
-- Quando o projeto estiver rodando, acesse no browser: **http://localhost:3333/api-docs** 
+- Quando o projeto estiver rodando, acesse o browser: **http://localhost:3333/api-docs** 
 
 ## Requisitos Não Funcionais Do Projeto
 - [x] Utilização do Express como servidor da API
@@ -41,7 +43,11 @@
 - [x] Usuário pode alterar dados de endereço
 - [x] Usuário pode remover endereço 
 
+### Regras de Negócio - Endereços
+- [x] Somente o usuário que criou o endereço pode ver, atualizar e deletar o endereço criado
+
 
 ### Testes Automatizados
+- Os testes automatizados foram realizados somente para o controle de usuários
 - Na raiz do projeto, digite: **npm test**
 
