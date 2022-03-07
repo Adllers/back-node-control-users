@@ -274,10 +274,53 @@
 
         },
 
+        "/addresses/{user_id}/my-addresses?country=": {
+            "get": {
+                "tags":["Address"],
+                "summary": "Get address using query and route params",
+                "description": "get addresses from authenticated user searching one country",
+                "security": [
+                    { "bearerAuth": []}
+                ],
+                "parameters": [{
+                    "in": "path",
+                    "name": "user_id",
+                    
+                    "schema":{
+                        "type": "string"
+                    },
+                    "required": true,
+                    "description": "String Id from user is required"
+                },
+                {
+                    "in":"query",
+                    "name": "country",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "description": "Search address by country!"
+                }
+            
+                ], 
+                "responses":{
+                    "200": {
+                        "description": "success"
+                    },
+                    "500": {
+                        "description": "Internal server error!"
+                    }
+                }
+            }
+        },
+
+
+
+
+
         "/addresses/update-address/{address_id}": {
             "put": {
                 "tags":["Address"],
-                "summary": "Update a address",
+                "summary": "Update a address using route params",
                 "description": "Update a address with country, state, city, district, street, and address_number",
                 "security": [
                     { "bearerAuth": []}
@@ -322,8 +365,8 @@
                                     "state":"Paraná",
                                     "city": "Curitiba",
                                     "district": "Batel",
-                                    "street": "Agustinho Brás",
-                                    "address_number": "545"
+                                    "street": "Augustinho Brás",
+                                    "address_number": "555"
                                 }
                             }
                         }
@@ -341,7 +384,45 @@
                     }
                 }
             }
+        },
+
+
+
+
+        "/addresses/delete-address/{address_id}": {
+            "delete": {
+                "tags":["Address"],
+                "summary": "Delete address using route params",
+                "description": "Delete one address from authenticated user",
+                "security": [
+                    { "bearerAuth": []}
+                ],
+                "parameters": [{
+                    "in": "path",
+                    "name": "address_id",
+                    
+                    "schema":{
+                        "type": "string"
+                    },
+                    "required": true,
+                    "description": "String Id from address is required"
+                }], 
+                "responses":{
+                    "200": {
+                        "description": "Delete address"
+                    },
+                    "400": {
+                        "description": "You are not allowed to delete this address!"
+                    },
+                    "500": {
+                        "description": "Internal server error!"
+                    }
+                }
+            }
         }
+
+        
+
 
 
 
