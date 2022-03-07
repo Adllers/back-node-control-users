@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
       "title": "Control Users and Addresses Documentation",
-      "describe": "This is an API to control users and addresses",
+      "description": "This is an API to control users and addresses",
       "version": "1.0.0",
       "contact": {
         "email": "adller.eel.ufsc@gmail.com"
@@ -81,6 +81,7 @@
 
 
         },
+
         "/sessions": {
             "post": {
                 "tags": [
@@ -166,50 +167,189 @@
                         }
                     }
                 },
-            "responses": {
-                "200": {
-                    "description": "See data user"
-                },
-                "400": {
-                    "description": "User not found!"
-                },
-                "401": {
-                    "description": "Unauthorized user"
-                },
-                "500": {
-                    "description": "Internal server error!"
+                "responses": {
+                    "200": {
+                        "description": "See data user"
+                    },
+                    "400": {
+                        "description": "User not found!"
+                    },
+                    "401": {
+                        "description": "Unauthorized user"
+                    },
+                    "500": {
+                        "description": "Internal server error!"
+                    }
+                }
+            },
+    
+            "get": {
+                "tags": [
+                    "User Profile"
+                ],
+                "summary": "Get user profile",
+                "description": "Get data from user profile",
+                "security": [
+                    { "bearerAuth": []}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "See data from user"
+                    },
+                    "400": {
+                        "description": "User not found!"
+                    },
+                    "401": {
+                        "description": "Unauthorized user"
+                    },
+                    "500": {
+                        "description": "Internal server error!"
+                    }
                 }
             }
+
         },
-    
-        "get": {
-            "tags": [
-                "User Profile"
-            ],
-            "summary": "Get user profile",
-            "description": "Get data from user profile",
-            "security": [
-                { "bearerAuth": []}
-            ],
-            "responses": {
-                "200": {
-                    "description": "See data from user"
+
+        "/addresses": {
+
+            "post": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "Create a address",
+                "description": "Create a new address with country, state, city, district, street, and address_number",
+                "security": [
+                    { "bearerAuth": []}
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "country": {
+                                        "type": "string"
+                                    },
+                                    "state": {
+                                        "type": "string"
+                                    },
+                                    "city": {
+                                        "type": "string"
+                                    },
+                                    "district": {
+                                        "type": "string"
+                                    },
+                                    "street": {
+                                        "type": "string"
+                                    },
+                                    "address_number": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "country": "Brasil",
+                                    "state":"Paraná",
+                                    "city": "Curitiba",
+                                    "district": "Batel",
+                                    "street": "Agustinho Brás",
+                                    "address_number": "545"
+                                }
+                            }
+                        }
+                    }
                 },
-                "400": {
-                    "description": "User not found!"
+                "responses": {
+                    "201": {
+                        "description": "Address created!"
+                    },
+                    "500": {
+                        "description": "Internal server error!"
+                    }
+                }
+            }
+            
+
+            
+
+
+        },
+
+        "/addresses/update-address/{address_id}": {
+            "put": {
+                "tags":["Address"],
+                "summary": "Update a address",
+                "description": "Update a address with country, state, city, district, street, and address_number",
+                "security": [
+                    { "bearerAuth": []}
+                ],
+                "parameters": [{
+                    "in": "path",
+                    "name": "address_id",
+                    
+                    "schema":{
+                        "type": "string"
+                    },
+                    "required": true,
+                    "description": "String Id from address is required"
+                }], 
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "country": {
+                                        "type": "string"
+                                    },
+                                    "state": {
+                                        "type": "string"
+                                    },
+                                    "city": {
+                                        "type": "string"
+                                    },
+                                    "district": {
+                                        "type": "string"
+                                    },
+                                    "street": {
+                                        "type": "string"
+                                    },
+                                    "address_number": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "country": "Brasil",
+                                    "state":"Paraná",
+                                    "city": "Curitiba",
+                                    "district": "Batel",
+                                    "street": "Agustinho Brás",
+                                    "address_number": "545"
+                                }
+                            }
+                        }
+                    }
                 },
-                "401": {
-                    "description": "Unauthorized user"
-                },
-                "500": {
-                    "description": "Internal server error!"
+                "responses":{
+                    "200": {
+                        "description": "Update address"
+                    },
+                    "400": {
+                        "description": "You are not allowed to update this address!"
+                    },
+                    "500": {
+                        "description": "Internal server error!"
+                    }
                 }
             }
         }
+
+
+
+
+        
+
+
     
-
-
-    }
     
 
     },

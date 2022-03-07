@@ -39,7 +39,7 @@
 - [x] Usuário pode Criar novo endereço
 - [x] Usuário pode visualizar seus endereços criados - por país (Deve ser utilizado queryParams e ParamsRoute)
 - [x] Usuário pode alterar dados de endereço
-- [] Usuário pode remover endereço 
+- [x] Usuário pode remover endereço 
 
 
 ### Testes Automatizados

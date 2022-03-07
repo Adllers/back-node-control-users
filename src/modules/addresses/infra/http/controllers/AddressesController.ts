@@ -22,7 +22,7 @@ export default class AdressesController {
 
        const address = await createAddress.execute({ country, state, city, district, street, address_number, user_id});
 
-       return response.json(address);
+       return response.status(201).json(address);
    } 
 
 
